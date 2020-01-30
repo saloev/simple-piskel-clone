@@ -2,6 +2,8 @@
 
 ![image](https://user-images.githubusercontent.com/26417963/73493308-8c50a300-43c3-11ea-8dab-0b0193372205.png)
 
+[demo](https://saloev.github.io/simple-piskel-clone/)
+
 ##### Try it out
 1. Install
     ``` make try ``` 
