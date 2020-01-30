@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  <link href="main.css" rel="stylesheet"></head>
+  <body class="body">
+    <!-- header -->
+    <header class=" mdc-top-app-bar mdc-top-app-bar--short">
+  <div class="mdc-top-app-bar__row">
+    <section
+      class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"
+    >
+      <button
+        class="mdc-icon-button material-icons mdc-top-app-bar__navigation-icon--unbounded"
+      >
+        menu</button
+      ><span class="mdc-top-app-bar__title">CodeJam Image API</span>
+    </section>
+    <section
+      class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end"
+    ></section>
+  </div>
+</header>
+
+
+    <main class="main">
+      <div class="main-layout">
+        <div class="main-layout__tools">
+          <!-- tools -->
+          <section class="section section--fixed">
+  <h2 class="sr-only">Tools</h2>
+  <ul class="mdc-list mdc-list--tools" role="listbox">
+    <li class="mdc-list-item" tabindex="0" role="option">
+      <span class="mdc-list-item__graphic material-icons" aria-hidden="true"
+        >format_paint</span
+      >
+      <span class="mdc-list-item__text">Fill bucket</span>
+    </li>
+    <li class="mdc-list-item" role="option">
+      <span class="mdc-list-item__graphic material-icons" aria-hidden="true"
+        >colorize</span
+      >
+      <span class="mdc-list-item__text">Choose color</span>
+    </li>
+    <li class="mdc-list-item mdc-list-item--selected" role="option">
+      <span class="mdc-list-item__graphic material-icons" aria-hidden="true"
+        >create</span
+      >
+      <span class="mdc-list-item__text">Pencil</span>
+    </li>
+    <li class="mdc-list-item" role="option">
+      <span class="mdc-list-item__graphic material-icons" aria-hidden="true"
+        >clear</span
+      >
+      <span class="mdc-list-item__text">Clear</span>
+    </li>
+    <li class="mdc-list-item" role="option">
+      <span class="mdc-list-item__graphic material-icons" aria-hidden="true"
+        >linear_scale</span
+      >
+      <span class="mdc-list-item__text">Stroke</span>
+    </li>
+    <li class="mdc-list-item" role="option">
+      <span class="mdc-list-item__graphic material-icons" aria-hidden="true"
+        >layers_clear</span
+      >
+      <span class="mdc-list-item__text">Eraser</span>
+    </li>
+  </ul>
+</section>
+
+
+          <!-- colors -->
+          <section class="section section--fixed">
+  <h2 class="sr-only">Colors</h2>
+  <ul class="mdc-list mdc-list--colors">
+    <li class="mdc-list-item" data-true="true" tabindex="-1">
+      <span
+        class="mdc-list-item__color mdc-list-item__color--current  mdc-list-item--selected"
+        aria-selected="true"
+        tabindex="0"
+      ></span>
+      <span class="mdc-list-item__text">Current color</span>
+      <label class="mdc-list-item__color-picker">
+        <input
+          type="color"
+          name="current-color"
+          class="color-picker__input"
+          tabindex="-1"
+        />
+        <span class="mdc-list-item__text">Current color</span>
+      </label>
+    </li>
+    <li class="mdc-list-item" tabindex="-1">
+      <span class="mdc-list-item__color mdc-list-item__color--previous"></span>
+      <span class="mdc-list-item__text">Previous color</span>
+    </li>
+    <li class="mdc-list-divider" role="separator"></li>
+    <li class="mdc-list-item" tabindex="-1">
+      <span class="mdc-list-item__color mdc-list-item__color--red"></span>
+      <span class="mdc-list-item__text">Red</span>
+    </li>
+    <li class="mdc-list-item" tabindex="-1">
+      <span class="mdc-list-item__color mdc-list-item__color--blue"></span>
+      <span class="mdc-list-item__text">Blue </span>
+    </li>
+  </ul>
+</section>
+
+        </div>
+
+        <div class="main-layout__canvas canvas-wrapper">
+          <div class="canvas__buttons">
+  <div class="mdc-text-field mdc-text-field--with-leading-icon">
+    <i class="material-icons mdc-text-field__icon">search</i>
+    <input
+      class="mdc-text-field__input town-input"
+      id="text-field-hero-input"
+    />
+    <div class="mdc-line-ripple"></div>
+    <label for="text-field-hero-input" class="mdc-floating-label">Moscow</label>
+  </div>
+  <button class="mdc-button mdc-button--raised btn--load-img">
+    <div class="mdc-button__ripple"></div>
+    <span class="mdc-button__label">Load</span>
+  </button>
+</div>
+ <div class="main-layout__canvas canvas-wrapper">
+  <canvas id="canvas" class="canvas">
+    Your browser don't support canvas :(
+  </canvas>
+</div>
+ <div class="canvas__slider">
+  <div
+    class="mdc-slider mdc-slider--discrete"
+    tabindex="0"
+    role="slider"
+    aria-valuemin="32"
+    aria-valuemax="512"
+    aria-valuenow="32"
+    data-step="32"
+    aria-label="Select Value"
+  >
+    <div class="mdc-slider__track-container">
+      <div class="mdc-slider__track"></div>
+    </div>
+    <div class="mdc-slider__thumb-container">
+      <div class="mdc-slider__pin">
+        <span class="mdc-slider__pin-value-marker"></span>
+      </div>
+      <svg class="mdc-slider__thumb" width="21" height="21">
+        <circle cx="10.5" cy="10.5" r="7.875"></circle>
+      </svg>
+      <div class="mdc-slider__focus-ring"></div>
+    </div>
+  </div>
+  <div class="canvas__buttons">
+    <div
+      class="canvas__input-size mdc-text-field mdc-text-field--with-leading-icon"
+    >
+      <i class="material-icons mdc-text-field__icon">photo_size_select_small</i>
+      <input
+        class="mdc-text-field__input canvas-size-input"
+        id="text-field-input"
+      />
+      <div class="mdc-line-ripple"></div>
+      <label for="text-field-hero-input" class="mdc-floating-label">32</label>
+    </div>
+    <button class="mdc-button mdc-button--raised btn--change-canvas-size">
+      <div class="mdc-button__ripple"></div>
+      <span class="mdc-button__label">Apply</span>
+    </button>
+  </div>
+</div>
+
+        </div>
+
+        <div class="main-layout__colors">
+          <section class="main-layout__canvas-size section section--fixed">
+  <h2 class="sr-only">Pen size</h2>
+
+  <div class="mdc-select">
+    <div class="mdc-select__anchor demo-width-class">
+      <i class="mdc-select__dropdown-icon"></i>
+      <div class="mdc-select__selected-text">1 &times; 1</div>
+      <span class="mdc-floating-label mdc-floating-label--float-above"
+        >Set pen size</span
+      >
+      <div class="mdc-line-ripple"></div>
+    </div>
+
+    <div class="mdc-select__menu demo-width-class mdc-menu mdc-menu-surface">
+      <ul class="mdc-list">
+        <li class="mdc-list-item mdc-list-item--selected" data-value="1">
+          1 &times; 1
+        </li>
+        <li class="mdc-list-item" data-value="2" aria-selected="true">
+          2 &times; 2
+        </li>
+        <li class="mdc-list-item" data-value="3">
+          3 &times; 3
+        </li>
+        <li class="mdc-list-item" data-value="4">
+          4 &times; 4
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+ <section class="main-layout__keyboard-shortcuts section section--fixed">
+  <h3>Keyboard shortcuts</h3>
+  <ul class="mdc-list mdc-list--tools mdc-list--non-interactive" role="listbox">
+    <li class="mdc-list-item" tabindex="0" role="option">
+      <span class="mdc-list-item__graphic material-icons" aria-hidden="true"
+        >format_paint</span
+      >
+      <span class="mdc-list-item__text">F</span>
+    </li>
+    <li class="mdc-list-item" role="option">
+      <span class="mdc-list-item__graphic material-icons" aria-hidden="true"
+        >colorize</span
+      >
+      <span class="mdc-list-item__text">G</span>
+    </li>
+    <li class="mdc-list-item" role="option">
+      <span class="mdc-list-item__graphic material-icons" aria-hidden="true"
+        >create</span
+      >
+      <span class="mdc-list-item__text">P</span>
+    </li>
+    <li class="mdc-list-item" role="option">
+      <span class="mdc-list-item__graphic material-icons" aria-hidden="true"
+        >clear</span
+      >
+      <span class="mdc-list-item__text">C</span>
+    </li>
+    <li class="mdc-list-item" role="option">
+      <span class="mdc-list-item__graphic material-icons" aria-hidden="true"
+        >linear_scale</span
+      >
+      <span class="mdc-list-item__text">S</span>
+    </li>
+    <li class="mdc-list-item" role="option">
+      <span class="mdc-list-item__graphic material-icons" aria-hidden="true"
+        >layers_clear</span
+      >
+      <span class="mdc-list-item__text">E</span>
+    </li>
+    <li class="mdc-list-divider" role="separator"></li>
+    <li class="mdc-list-item" role="option">
+      <span class="mdc-list-item__graphic material-icons" aria-hidden="true"
+        >replay</span
+      >
+      <span class="mdc-list-item__text">1 (previous color)</span>
+    </li>
+    <li class="mdc-list-item" tabindex="-1">
+      <span class="mdc-list-item__color mdc-list-item__color--red"></span>
+      <span class="mdc-list-item__text">2</span>
+    </li>
+    <li class="mdc-list-item" tabindex="-1">
+      <span class="mdc-list-item__color mdc-list-item__color--blue"></span>
+      <span class="mdc-list-item__text">3 </span>
+    </li>
+  </ul>
+</section>
+
+        </div>
+      </div>
+    </main>
+  <script type="text/javascript" src="app.js"></script></body>
+</html>
