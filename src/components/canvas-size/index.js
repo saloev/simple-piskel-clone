@@ -19,7 +19,7 @@ export default class SetCanvasSize {
     this.slider.listen('MDCSlider:input', this.sliderInput);
     this.currentValue = this.slider.value;
 
-    Event.listen('click', this.changeSize, this.button);
+    Event.listen('click', this.changeSize, this.btn);
 
     this.checkLocalStorage();
   }
@@ -32,10 +32,19 @@ export default class SetCanvasSize {
     this.slider.value = matrixSize;
   }
 
-  changeSize() {
-    const { value } = document.body.querySelector('.canvas-size-input');
+  changeSize = () => {
+    const input = document.body.querySelector('.canvas-size-input');
+    let { value } = input;
+    const canvasMaxSize = 512;
+    const canvasMinSize = 32;
     if (!+value) return;
-    Event.create('canvas:changeSize', value);
+
+    value = value < canvasMinSize ? canvasMinSize : value;
+    value = value > canvasMaxSize ? canvasMaxSize : value;
+    input.value = value;
+
+    this.slider.value = +value;
+    this.sliderChange();
   }
 
   sliderChange = () => {
