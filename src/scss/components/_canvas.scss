@@ -1,0 +1,23 @@
+.canvas {
+  width: 512px;
+  height: 512px;
+  margin: 15px 0;
+
+  box-shadow: $panel-box-shadow;
+
+  &-wrapper {
+    position: relative;
+  }
+
+  &__buttons {
+    width: 512px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-column-gap: 10px;
+
+    button {
+      height: 100%;
+    }
+  }
+}

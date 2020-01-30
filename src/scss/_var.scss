@@ -1,0 +1,17 @@
+$primary: rgba(0, 0, 0, 0.87);
+$primary--light: rgba(0, 0, 0, 0.541327);
+
+$main-color: #fff;
+
+$panel-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.24),
+  0px 0px 4px rgba(0, 0, 0, 0.12);
+
+$assets: '~assets';
+
+// !!!IMPORTANT STYLES USES IN JS
+:root {
+  --current-color: #c4c4c4;
+  --previous-color: #41f795;
+  --default-first-color: #f74141;
+  --default-second-color: #41b6f7;
+}

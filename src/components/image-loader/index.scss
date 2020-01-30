@@ -1,0 +1,13 @@
+.canvas {
+  &__buttons {
+    width: 512px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-column-gap: 10px;
+
+    button {
+      height: 100%;
+    }
+  }
+}

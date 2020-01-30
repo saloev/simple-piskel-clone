@@ -1,0 +1,16 @@
+@import "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/icon-button/mdc-icon-button";
+
+.mdc-top-app-bar {
+  color: $primary;
+
+  @include mdc-top-app-bar-fill-color($main-color);
+  @include mdc-top-app-bar-icon-ink-color($primary);
+  &--short {
+    box-shadow: $panel-box-shadow;
+  }
+
+  &__navigation-icon--unbounded {
+    @include mdc-top-app-bar-ink-color($primary--light);
+  }
+}

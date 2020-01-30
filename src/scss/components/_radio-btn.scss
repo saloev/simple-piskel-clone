@@ -1,0 +1,12 @@
+@import "@material/form-field/mdc-form-field";
+@import "@material/radio/mdc-radio";
+
+.mdc-form {
+  &-wrap {
+    box-shadow: $panel-box-shadow;
+  }
+
+  &-field {
+    display: flex;
+  }
+}
